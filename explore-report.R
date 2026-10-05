@@ -1,6 +1,6 @@
 # Chapter 3, starter: where the session begins.
 source("packages.R")
-source("functions.R")
+lapply(fs::dir_ls("R"), source)
 
 # ---- read ----
 qld_toads_raw <- read_parquet(here("data-raw/cane-toad-wildnet.parquet"))
