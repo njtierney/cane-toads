@@ -1,15 +1,5 @@
-#' .. content for \description{} (no empty lines) ..
-#'
-#' .. content for \details{} ..
-#'
-#' @title
-#' @param toads_raw
-#' @return
-#' @author njtierney
-#' @export
 tidy_toads <- function(toads_raw) {
-  result <- toads_raw |>
-    # from janitor
+  toads_raw |>
     clean_names() |>
     rename(
       lat = decimal_latitude,
@@ -18,21 +8,12 @@ tidy_toads <- function(toads_raw) {
       coord_var_m = coordinate_uncertainty_in_meters,
       resource_name = data_resource_name
     ) |>
-    relocate(
-      year,
-      .before = date
-    ) |>
+    # Year is computed from date, decade computed from year
     mutate(
-      # lubridate::year
       year = year(date),
       decade = floor(year / 10) * 10,
-      .after = year
+      .after = date
     ) |>
-    drop_na(
-      lat,
-      lon,
-      date
-    )
-
-  result
+    # Drop records with no date/lat/lon info
+    drop_na(date, lon, lat)
 }

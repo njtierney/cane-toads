@@ -1,24 +1,14 @@
-#' .. content for \description{} (no empty lines) ..
-#'
-#' .. content for \details{} ..
-#'
-#' @title
-#' @param toads
-#' @param map
-#' @return
-#' @author njtierney
-#' @export
-find_state <- function(toads = toads, map = ozmap_states) {
-  ## can we find what state a given point is in
-  toads_sf <- st_as_sf(x = toads, coords = c("lon", "lat"), crs = 4326)
-  # update CRS of ozmap
-  oz_states <- map |>
-    st_transform(crs = 4326)
+# Which state each record falls inside, as a new `point_in_state` column.
+find_state <- function(toads, map) {
+  # `map` is ozmap_states, or anything with a NAME column for each polygon.
+  map_states <- map |>
+    st_transform(crs = 4326) |>
+    select(point_in_state = NAME)
 
-  toads_states <- st_join(toads_sf, oz_states) |>
-    select(-state) |>
-    rename(state = NAME) |>
-    relocate(state, .before = everything())
-
-  toads_states
+  toads |>
+    # Transformed to WGS84 to match ALA. Records outside every state get NA.
+    # remove = FALSE keeps the lon/lat
+    st_as_sf(coords = c("lon", "lat"), crs = 4326, remove = FALSE) |>
+    st_join(map_states) |>
+    st_drop_geometry()
 }

@@ -1,0 +1,12 @@
+state,scientific_name,lat,lon,year,decade,distance_km,date,coord_var_m,resource_name,basis_of_record,license
+Queensland,Rhinella marina,-16.46512,145.36778,1937,1930,NA,1937-01-01T00:00:00Z,10000,WildNet - Queensland Wildlife Data,OCCURRENCE,CC-BY 4.0 (Int)
+Queensland,Rhinella marina,-17.68165,145.11778,1943,1940,137.23807862013075,1943-01-01T00:00:00Z,1800,WildNet - Queensland Wildlife Data,OCCURRENCE,CC-BY 4.0 (Int)
+Queensland,Rhinella marina,-18.14832,144.31778,1950,1950,99.26105933461292,1950-01-01T00:00:00Z,1800,WildNet - Queensland Wildlife Data,OCCURRENCE,CC-BY 4.0 (Int)
+Queensland,Rhinella marina,-17.74832,139.55112,1968,1960,506.88180372539364,1968-01-01T00:00:00Z,3600,WildNet - Queensland Wildlife Data,OCCURRENCE,CC-BY 4.0 (Int)
+Queensland,Rhinella marina,-17.03165,139.15112,1979,1970,89.98754609751172,1979-01-01T00:00:00Z,1800,WildNet - Queensland Wildlife Data,OCCURRENCE,CC-BY 4.0 (Int)
+Northern Territory,Rhinella marina,-12.528569,136.031167,1986,1980,600.8394981001306,1986-05-27T00:00:00Z,NA,Fauna Atlas N.T.,HUMAN_OBSERVATION,CC-BY 3.0 (Au)
+Northern Territory,Rhinella marina,-12.457961,130.824637,1996,1990,565.9978510255797,1996-11-18T00:00:00Z,NA,Fauna Atlas N.T.,HUMAN_OBSERVATION,CC-BY 3.0 (Au)
+Northern Territory,Rhinella marina,-14.841209,129.542813,2009,2000,297.91749372726304,2009-06-02T00:00:00Z,NA,Fauna Atlas N.T.,HUMAN_OBSERVATION,CC-BY 3.0 (Au)
+Northern Territory,Rhinella marina,-17.334244,129.288222,2016,2010,277.21972080523415,2016-04-28T00:00:00Z,10,Fauna Atlas N.T.,HUMAN_OBSERVATION,CC-BY 3.0 (Au)
+Northern Territory,Rhinella marina,-12.35764,130.87674,2020,2020,576.5617562968662,2020-09-13T00:00:00Z,NA,Fauna Atlas N.T.,HUMAN_OBSERVATION,CC-BY 3.0 (Au)
+Northern Territory,Rhinella marina,-12.35764,130.87674,2020,2020,5.2287148879067705e-14,2020-09-13T00:00:00Z,NA,Fauna Atlas N.T.,HUMAN_OBSERVATION,CC-BY 3.0 (Au)
