@@ -7,3 +7,4 @@
 .quarto
 *.html
 *_files/*
+_targets/
