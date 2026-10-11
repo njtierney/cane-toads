@@ -15,5 +15,6 @@ tidy_toads <- function(toads_raw) {
       .after = date
     ) |>
     # Drop records with no date/lat/lon info
-    drop_na(date, lon, lat)
+    drop_na(date, lon, lat) |>
+    filter(year >= 1935)
 }

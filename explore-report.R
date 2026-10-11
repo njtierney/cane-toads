@@ -1,6 +1,9 @@
 # Chapter 3, starter: where the session begins.
 source("packages.R")
-lapply(fs::dir_ls("R"), source)
+# source("R/add_distance.R")
+# source("R/filter_most_west.R")
+# use lapply + source to "load" all the R files
+fs::dir_ls(path = "R", glob = "*.R") |> lapply(source) |> invisible()
 
 # ---- read ----
 qld_toads_raw <- read_parquet(here("data-raw/cane-toad-wildnet.parquet"))
@@ -19,6 +22,8 @@ toads_west_front <- filter_most_west(toads_states)
 toad_distances <- add_distance(toads_west_front)
 
 # ---- results ----
+toads_states |> count(state)
+toads_states |> count(point_in_state)
 toads_states |> count(state, point_in_state)
 
 toads |> count(decade)

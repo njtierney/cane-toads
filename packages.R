@@ -1,11 +1,21 @@
 # ---- packages ----
 library(arrow)
+library(crew) # for parallel compute
 library(fs)
 library(geodist)
 library(here)
 library(janitor)
-library(tidyverse)
+# library(MASS)
 library(ozmaps)
 library(sf)
+library(targets)
+# extension to targets - gives us tar_file(), and tar_assign()
+library(tarchetypes)
+library(tidyverse)
 # explore glm.nb function
-library(MASS)
+
+library(conflicted)
+conflicts_prefer(
+  dplyr::select,
+  dplyr::filter
+)

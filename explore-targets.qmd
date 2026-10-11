@@ -1,0 +1,36 @@
+---
+title: "explore-targets"
+format: html
+---
+
+```{r}
+#| label: libraries
+source("packages.R")
+tar_source()
+```
+
+```{r}
+#| label: load-targets
+tar_load(
+  c(toads,
+    toads_states,
+    toads_west_front,
+    toad_distances)
+)
+```
+
+```{r}
+toads
+```
+
+
+```{r}
+toads_states |> count(state)
+toads_states |> count(point_in_state)
+toads_states |> count(state, point_in_state)
+toads |> count(decade)
+ggplot(toad_distances, aes(x = decade, y = distance_km)) +
+  geom_col() +
+  scale_x_continuous(breaks = scales::breaks_width(width = 10))
+```
+
