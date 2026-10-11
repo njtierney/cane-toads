@@ -1,4 +1,5 @@
 # setup code
+options(tidyverse.quiet = TRUE)
 source("packages.R")
 # **tar**gets
 tar_source("R")
@@ -43,7 +44,7 @@ tar_assign({
     toads_states,
     toads_west_front
   ) |>
-    tar_target(description = "plot of toads western pathway")
+    tar_target()
 
   # ---- explore ----
   report <- tar_quarto("explore-targets.qmd")
