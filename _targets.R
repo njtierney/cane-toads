@@ -3,17 +3,6 @@ source("packages.R")
 # **tar**gets
 tar_source("R")
 
-# facilitate this working in parallel
-example_controller <- crew_controller_local(
-  name = "anything",
-  workers = 4,
-  seconds_idle = 3
-)
-
-tar_option_set(
-  controller = example_controller
-)
-
 tar_assign({
   # ---- read ----
   qld_toads_path <- "data-raw/cane-toad-wildnet.parquet" |> tar_file()

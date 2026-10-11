@@ -1,6 +1,5 @@
 # ---- packages ----
 library(arrow)
-library(crew) # for parallel compute
 library(fs)
 library(geodist)
 library(here)

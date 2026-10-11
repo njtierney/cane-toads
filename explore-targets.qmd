@@ -34,3 +34,9 @@ ggplot(toad_distances, aes(x = decade, y = distance_km)) +
   scale_x_continuous(breaks = scales::breaks_width(width = 10))
 ```
 
+```{r}
+#| label: front
+toads_west_front |>
+  select(decade, lon, lat, state, point_in_state)
+```
+
